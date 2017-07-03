@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/movie_editor_audio_importer_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@color/background_almost_black"
+    >
+
+    <!--ツールバー-->
+    <include layout="@layout/toolbar"/>
+
+    <!--動画部分 -->
+    <FrameLayout
+        android:id="@+id/movie_editor_audio_importer_display"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f2f2f2">
+
+        <!-- 動画プレイヤー サイズは後から決まるよ -->
+        <tv.mixch.widget.RawMovieView
+            android:id="@+id/movie_editor_audio_importer_player"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="visible" />
+
+        <!--再生ボタン-->
+        <ImageView
+            android:id="@+id/movie_editor_audio_importer_button_play"
+            android:layout_width="45dp"
+            android:layout_height="52dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/btn_cue"
+            android:visibility="visible" />
+    </FrameLayout>
+
+
+    <!--曲名を表示するとこ-->
+    <TextView
+        android:id="@+id/movie_editor_audio_importer_audio_title"
+        android:layout_width="wrap_content"
+        android:layout_height="18dp"
+        android:layout_marginTop="8dp"
+        android:textSize="12sp"
+        android:typeface="monospace"
+        android:gravity="center_vertical"
+        android:textColor="@color/light_grey"
+        android:background="@color/background_almost_black"
+        android:drawableLeft="@drawable/ico_bgm"
+        android:drawablePadding="7dp"
+        />
+
+    <!--曲の長さを表示するとこ-->
+    <LinearLayout
+        android:id="@+id/movie_editor_audio_importer_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:background="@color/background_almost_black"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+
+        <TextView
+            android:id="@+id/movie_editor_audio_importer_duration_min"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12dp"
+            android:gravity="center"
+            android:typeface="monospace"
+            android:textColor="@color/light_grey"
+            android:text="00:"
+            />
+        <TextView
+            android:id="@+id/movie_editor_audio_importer_duration_sec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12dp"
+            android:gravity="center"
+            android:typeface="monospace"
+            android:textColor="@color/light_grey"
+            android:text="00:"
+            />
+        <TextView
+            android:id="@+id/movie_editor_audio_importer_duration_millisec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12dp"
+            android:gravity="center"
+            android:typeface="monospace"
+            android:textColor="@color/light_grey"
+            android:text="00"
+            />
+
+    </LinearLayout>
+
+    <!--インジケーターとそれ以外を重ねるためのフレーム -->
+    <FrameLayout
+        android:id="@+id/movie_editor_audio_importer_editor"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!--波形-->
+        <tv.mixch.widget.waveform.AdjusterView
+            android:id="@+id/movie_editor_audio_importer_adjuster"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+        <!-- 再生中の箇所意外を隠すカバー -->
+        <tv.mixch.widget.waveform.CoverView
+            android:id="@+id/movie_editor_audio_importer_cover"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <!-- インジケーター -->
+        <tv.mixch.widget.waveform.IndicatorView
+            android:id="@+id/movie_editor_audio_importer_indicator"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+    </FrameLayout>
+</LinearLayout>

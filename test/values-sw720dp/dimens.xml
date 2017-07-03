@@ -1,0 +1,54 @@
+<resources>
+    <!--
+         Customize dimensions originally defined in res/values/dimens.xml (such as
+         screen margins) for sw720dp devices (e.g. 10" tablets) here.
+    -->
+    <dimen name="margin">12dp</dimen>
+    <dimen name="home_caption_text_size">24sp</dimen>
+    <dimen name="movie_button_text_size">16sp</dimen>
+    <dimen name="movie_user_text_size">18sp</dimen>
+    <dimen name="movie_memo_text_size">16sp</dimen>
+    <dimen name="movie_date_text_size">14sp</dimen>
+    <dimen name="profile_name_text_size">20sp</dimen>
+    <dimen name="profile_bio_text_size">16sp</dimen>
+    <dimen name="profile_edit_image_size">144dp</dimen>
+    <dimen name="profile_edit_vertical_margin">30dp</dimen>
+    <dimen name="notification_user_image_size">64dp</dimen>
+    <dimen name="notification_comment_text_size">16sp</dimen>
+    <dimen name="notification_date_text_size">13sp</dimen>
+    <dimen name="movie_grid_stat_text_size">14sp</dimen>
+    <dimen name="comment_gap_text_size">15sp</dimen>
+    <dimen name="comment_name_text_size">17sp</dimen>
+    <dimen name="comment_date_text_size">13sp</dimen>
+    <dimen name="comment_comment_text_size">15sp</dimen>
+    <dimen name="comment_user_image_size">48dp</dimen>
+    <dimen name="comment_movie_image_size">180dp</dimen>
+    <dimen name="movie_range_time_text_size">10sp</dimen>
+    <dimen name="comment_remain_text_size">16sp</dimen>
+    <dimen name="login_label_text_size">18sp</dimen>
+    <dimen name="login_layout_padding">32dp</dimen>
+    <dimen name="mypage_stat_caption_text_size">14sp</dimen>
+    <dimen name="mypage_stat_value_text_size">18sp</dimen>
+    <dimen name="drawer_width">320dp</dimen>
+    <dimen name="drawer_item_height">52dp</dimen>
+    <dimen name="drawer_item_padding">20dp</dimen>
+    <dimen name="drawer_item_icon_size">40dp</dimen>
+    <dimen name="drawer_item_text_size">16sp</dimen>
+    <dimen name="user_fan_button_text_size">18sp</dimen>
+    <dimen name="user_fan_label_text_size">14sp</dimen>
+    <dimen name="movie_editor_hint_text_size">12sp</dimen>
+    <dimen name="dubbing_seconds_text_size">18sp</dimen>
+    <dimen name="dubbing_millis_text_size">16sp</dimen>
+    <dimen name="movie_editor_note_text_size">18sp</dimen>
+    <dimen name="user_fan_request_name_text_size">18sp</dimen>
+    <dimen name="user_fan_request_comment_text_size">16sp</dimen>
+    <dimen name="movie_user_image_size">70dp</dimen>
+    <dimen name="movie_button_height">62dp</dimen>
+    <dimen name="movie_view_margin">10dp</dimen>
+    <dimen name="movie_button_mark_size">40dp</dimen>
+    <dimen name="movie_button_twitter_size">45dp</dimen>
+    <dimen name="movie_button_google_size">40dp</dimen>
+    <dimen name="layout_padding">16dp</dimen>
+    <dimen name="users_user_image_size">48dp</dimen>
+
+</resources>

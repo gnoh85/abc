@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="live" type="tv.mixch.model.LiveVModel" />
+    </data>
+
+    <FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="#ffffff"
+            >
+
+            <!-- 壁紙 -->
+            <tv.mixch.widget.NetworkImageView
+                android:id="@+id/profile_wallpaper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:scaleType="centerCrop"
+                />
+
+            <!--プロフィール画像-->
+            <tv.mixch.widget.CircleNetworkImageView
+                android:id="@+id/profile_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                app:defaultImageResId="@drawable/mysteryman"
+                app:imageUrl="@{live.hostProfileImage}"
+                app:borderColor="#ffffff"
+                app:circleBorderWidth="2dp"
+                android:onClick="@{live.listener.onOpenUserPage}"
+                />
+
+            <!--名前-->
+            <TextView
+                android:id="@+id/profile_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#ff3b48"
+                android:textSize="14sp"
+                android:text="@{live.hostProfileName}"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:lines="1"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:layout_marginBottom="8dp"
+                android:onClick="@{live.listener.onOpenUserPage}"
+                />
+
+            <!--自己紹介-->
+            <TextView
+                android:id="@+id/profile_bio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#979797"
+                android:textSize="12sp"
+                android:text="@{live.hostProfileBio}"
+                android:gravity="center"
+                android:maxLines="3"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginBottom="12dp"
+                />
+
+            <!--ファンになるボタン-->
+            <tv.mixch.widget.live.FanButton
+                android:id="@+id/fan_button"
+                android:layout_width="104dp"
+                android:layout_height="36dp"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="12dp"
+                app:fan="@{live.fan}"
+                app:following="@{live.following}"
+                android:onClick="@{live.listener.onFanRequest}"
+                />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/live_report"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="@string/live_report"
+            android:textSize="12sp"
+            android:textColor="#ff000000"
+            android:shadowColor="#ffffffff"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            android:layout_gravity="right|top"
+            android:onClick="@{live.listener.onReport}"
+            />
+
+    </FrameLayout>
+
+</layout>

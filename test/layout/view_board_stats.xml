@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/board_layout"
+	android:orientation="horizontal"
+	android:layout_width="match_parent"
+	android:layout_height="42dp"
+	>
+	<TextView
+		android:id="@+id/board_title"
+		android:text="@string/board_title"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="8dp"
+		android:layout_marginRight="8dp"
+		android:layout_gravity="center_vertical|left"
+		android:gravity="center_vertical|left"
+		android:drawableLeft="@drawable/icon_board"
+		android:drawablePadding="4dp"
+		android:textSize="14sp"
+		android:textColor="#ff444444"
+		android:typeface="normal"
+		android:textStyle="normal"
+		android:lines="1"
+		android:ellipsize="end"
+	/>
+	<TextView
+		android:id="@+id/board_count"
+		android:text=""
+		android:layout_weight="1"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="0dp"
+		android:layout_marginRight="8dp"
+		android:layout_gravity="center_vertical|right"
+		android:gravity="right"
+		android:drawableRight="@drawable/ic_arrow_forward_grey600_18dp"
+		android:drawablePadding="8dp"
+		android:textSize="16sp"
+		android:textColor="#ff777777"
+		android:typeface="normal"
+		android:textStyle="bold"
+		android:lines="1"
+		android:ellipsize="none"
+	/>
+</LinearLayout>

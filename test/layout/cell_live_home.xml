@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data>
+        <variable name="live" type="tv.mixch.model.LiveVModel"/>
+        <import type="android.view.View" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="188dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:onClick="@{live.listener.onOpenLive}"
+        >
+
+        <!-- プロフィールイメージ -->
+        <tv.mixch.widget.NetworkImageView
+            android:id="@+id/host_profile_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:defaultImageResId="@drawable/mysteryman"
+            app:imageUrl="@{live.hostProfileImage}"
+            android:contentDescription=""
+            />
+
+
+        <!-- 下段のグラデーションカバー -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:paddingTop="16dp"
+            android:layout_alignTop="@+id/live_title"
+            android:background="@drawable/bg_live_below_cover"
+            />
+
+        <!--種類-->
+        <tv.mixch.widget.live.StatusView
+            android:id="@+id/status"
+            android:layout_width="52dp"
+            android:layout_height="21dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            app:kind="@{live.kind}"
+            app:playing="@{live.playing}"
+            app:alive="@{live.alive}"
+            />
+
+        <!--カラオケアイコン-->
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_alignTop="@id/status"
+            android:layout_alignBottom="@id/status"
+            android:layout_toRightOf="@id/status"
+            android:layout_marginLeft="8dp"
+            android:src="@drawable/ico_live_song"
+            android:visibility="@{live.playing ? View.VISIBLE : View.GONE}"
+            />
+
+        <!-- 配信者の名前 -->
+        <TextView
+            android:id="@+id/host_profile_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="right"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:text="@{live.hostProfileName}"
+            android:lines="1"
+            android:layout_alignParentBottom="true"
+            />
+
+        <!-- 配信タイトル -->
+        <TextView
+            android:id="@id/live_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/host_profile_name"
+            android:layout_alignLeft="@id/host_profile_name"
+            android:layout_alignRight="@id/host_profile_name"
+            android:paddingTop="8dp"
+            android:gravity="right"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:lines="1"
+            android:text="@{live.title}"
+            />
+
+    </RelativeLayout>
+</layout>

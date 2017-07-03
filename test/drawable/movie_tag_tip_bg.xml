@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- item の drawable に設定された画像は可能な限り引き伸ばされて表示される  -->
+<!-- 画像の設定を bitmap 内で行い、同時に gravity を設定してあげることで -->
+<!-- 引き伸ばされるのを回避することができる                                 -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+	<item android:top="0dp" android:left="0dp" android:width="14dp" android:height="28dp">
+		<bitmap
+			android:src="@drawable/tag_tip_left"
+			android:gravity="left|center_vertical"
+			/>
+	</item>
+	<item android:left="14dp">
+		<shape android:shape="rectangle">
+			<solid android:color="#74e5c0" />
+			<corners android:bottomRightRadius="4dp" android:topRightRadius="4dp"/>
+		</shape>
+	</item>
+</layer-list>

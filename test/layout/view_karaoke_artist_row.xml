@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="48dp"
+              android:background="@drawable/bg_karaoke_item_row">
+
+    <ImageView
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:layout_marginRight="6dp"
+        android:src="@drawable/ic_chevron_right_grey600_18dp"
+        android:layout_gravity="right"/>
+
+    <TextView
+        android:id="@+id/song_artist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="#777777"
+        android:drawableLeft="@drawable/ico_artist"
+        android:drawablePadding="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="80dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:layout_gravity="left|center_vertical"
+        android:gravity="center_vertical"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="bottom"
+        android:background="#eeeeee"/>
+
+</FrameLayout>

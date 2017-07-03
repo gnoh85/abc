@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<TextView
+		android:text="@string/timeline_no_follows"
+		android:textColor="#ff757575"
+		android:textSize="20sp"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="120dp"
+		android:layout_gravity="center"
+		android:gravity="center"
+		/>
+	<Button
+		android:id="@+id/users_ranking_button"
+		android:text="@string/timeline_users_ranking"
+		android:layout_width="wrap_content"
+		android:layout_height="40dp"
+		android:layout_marginTop="64dp"
+		android:layout_gravity="center"
+		android:paddingLeft="16dp"
+		android:paddingRight="16dp"
+		android:gravity="center"
+		android:textSize="14sp"
+		android:textColor="#ffffff"
+		android:background="#ff7717"
+		/>
+	<TextView
+		android:text="@string/timeline_empty_message"
+		android:textColor="#ff9e9e9e"
+		android:textSize="14sp"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="24dp"
+		android:layout_gravity="center"
+		android:gravity="center"
+		/>
+</LinearLayout>

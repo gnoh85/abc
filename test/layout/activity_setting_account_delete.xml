@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<include layout="@layout/toolbar" />
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical">
+		<TextView
+			android:id="@+id/account_delete_notice"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="16dp"
+			android:layout_marginLeft="16dp"
+			android:layout_marginRight="16dp"
+			android:textSize="14sp"
+			android:text="@string/account_delete_notice"
+			/>
+		<Button
+			android:id="@+id/account_delete_button"
+			android:layout_width="match_parent"
+			android:layout_height="52dp"
+			android:layout_marginTop="32dp"
+			android:layout_marginLeft="16dp"
+			android:layout_marginRight="16dp"
+			android:gravity="center"
+			android:text="@string/account_delete"
+			android:textColor="#FFFFFF"
+			android:textStyle="bold"
+			android:textSize="16sp"
+			android:background="@color/material_red_A400"
+		/>
+	</LinearLayout>
+</LinearLayout>

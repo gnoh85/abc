@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="@drawable/bg_signup">
+	<ImageView
+		android:layout_width="match_parent"
+		android:layout_height="20dp"
+		android:layout_marginTop="36dp"
+		android:layout_gravity="center"
+		android:src="@drawable/logo_mixch"
+		android:contentDescription="MixChannel" />
+	<FrameLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="32dp"
+		android:layout_gravity="center">
+		<TextView
+			android:layout_width="60dp"
+			android:layout_height="20dp"
+			android:layout_marginLeft="0dp"
+			android:gravity="left|center_vertical"
+			android:textSize="12sp"
+			android:textStyle="normal"
+			android:textColor="#FFFFFF"
+			android:text="step1"
+			/>
+		<TextView
+			android:layout_width="60dp"
+			android:layout_height="20dp"
+			android:layout_marginLeft="60dp"
+			android:gravity="center"
+			android:textSize="12sp"
+			android:textStyle="normal"
+			android:textColor="#FFFFFF"
+			android:text="step2"
+			/>
+		<TextView
+			android:layout_width="60dp"
+			android:layout_height="20dp"
+			android:layout_marginLeft="120dp"
+			android:gravity="right|center_vertical"
+			android:textSize="14sp"
+			android:textStyle="normal"
+			android:textColor="#FFFFFF"
+			android:text="step3"
+			/>
+		<View
+			android:layout_width="144dp"
+			android:layout_height="2dp"
+			android:layout_marginTop="27dp"
+			android:layout_marginLeft="18dp"
+			android:background="#F8E71C" />
+		<View
+			android:layout_width="12dp"
+			android:layout_height="12dp"
+			android:layout_marginTop="22dp"
+			android:layout_marginLeft="12dp"
+			android:background="@drawable/step_active" />
+		<View
+			android:layout_width="12dp"
+			android:layout_height="12dp"
+			android:layout_marginTop="22dp"
+			android:layout_marginLeft="84dp"
+			android:background="@drawable/step_active" />
+		<View
+			android:layout_width="12dp"
+			android:layout_height="12dp"
+			android:layout_marginTop="22dp"
+			android:layout_marginLeft="156dp"
+			android:background="@drawable/step_active" />
+	</FrameLayout>
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="48dp"
+		android:layout_marginLeft="48dp"
+		android:layout_marginRight="40dp"
+		android:layout_gravity="center"
+		android:gravity="center"
+		android:textSize="26sp"
+		android:textColor="#FFFFFF"
+		android:text="@string/signup_finish"
+		/>
+	<Space
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1" />
+	<Button
+		android:id="@+id/next_button"
+		android:layout_width="match_parent"
+		android:layout_height="56dp"
+		android:layout_marginLeft="64dp"
+		android:layout_marginRight="64dp"
+		android:layout_marginBottom="48dp"
+		android:gravity="center"
+		android:text="@string/signup_finish_start"
+		android:textSize="18sp"
+		android:textColor="#FF404A"
+		android:background="@drawable/button_signup"
+		/>
+</LinearLayout>

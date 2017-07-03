@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="20dp"
+              android:layout_height="15dp"
+              android:gravity="bottom">
+<View
+    android:id="@+id/left_bar"
+    android:layout_width="5dp"
+    android:layout_height="15dp"
+    android:scaleY="0.2"
+    android:transformPivotY="15dp"
+    android:background="#ffffff"/>
+<View
+    android:id="@+id/middle_bar"
+    android:layout_marginLeft="2dp"
+    android:layout_width="5dp"
+    android:layout_height="15dp"
+    android:scaleY="0.5"
+    android:transformPivotY="15dp"
+    android:background="#ffffff"/>
+<View
+    android:id="@+id/right_bar"
+    android:layout_marginLeft="2dp"
+    android:layout_width="5dp"
+    android:layout_height="15dp"
+    android:scaleY="0.8"
+    android:transformPivotY="15dp"
+    android:background="#ffffff"/>
+</LinearLayout>

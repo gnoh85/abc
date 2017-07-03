@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="live" type="tv.mixch.model.LiveVModel"/>
+    </data>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:onClick="@{live.listener.onOpenLive}"
+        >
+
+        <!--種類-->
+        <tv.mixch.widget.live.StatusView
+            android:layout_width="52dp"
+            android:layout_height="21dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            app:kind="@{live.kind}"
+            app:playing="@{live.playing}"
+            app:alive="@{live.alive}"
+            />
+
+        <!--配信タイトル-->
+        <TextView
+            android:id="@+id/live_title"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="6dp"
+            android:gravity="center_vertical"
+            android:text="@{live.title}"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#ff444444"
+            android:lines="1"
+            android:ellipsize="end"
+            />
+
+        <!-- 視聴者数 -->
+        <TextView
+            android:id="@+id/live_guest_count"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="6dp"
+            android:layout_gravity="right|center_vertical"
+            android:gravity="center_vertical"
+            android:textSize="13sp"
+            android:text="@{live.visitor}"
+            android:textColor="#ff777777"
+            android:typeface="normal"
+            android:textStyle="bold"
+            android:drawableLeft="@drawable/ico_live_visitor_dark"
+            android:drawablePadding="5dp"
+            />
+
+        <!-- コメント数 -->
+        <TextView
+            android:id="@+id/live_comment_count"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="6dp"
+            android:layout_gravity="right|center_vertical"
+            android:gravity="center_vertical"
+            android:text="@{live.comments}"
+            android:textSize="13sp"
+            android:textColor="#ff777777"
+            android:typeface="normal"
+            android:textStyle="bold"
+            android:drawableLeft="@drawable/ico_live_comment_dark"
+            android:drawableRight="@drawable/ic_arrow_forward_grey600_18dp"
+            android:drawablePadding="5dp"
+            />
+    </LinearLayout>
+</layout>
+

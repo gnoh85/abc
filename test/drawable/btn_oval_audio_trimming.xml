@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <!-- 有効時 -->
+    <item android:state_enabled="true">
+        <layer-list>
+            <item>
+                <shape
+                    android:shape="oval"
+                    android:innerRadius="27dp"
+                    android:useLevel="false"
+                    >
+                    <solid
+                        android:color="#B3000000"
+                        />
+                </shape>
+            </item>
+            <item>
+                <shape
+                    android:shape="ring"
+                    android:innerRadius="27dp"
+                    android:thickness="6dp"
+                    android:useLevel="false"
+                    >
+                    <solid
+                        android:color="#99272727"
+                        />
+                </shape>
+            </item>
+            <item android:width="66dp" android:height="66dp">
+                <bitmap
+                    android:src="@drawable/ico_audio_trimming"
+                    android:gravity="center"
+                    />
+            </item>
+        </layer-list>
+    </item>
+    <!-- 無効時 -->
+    <item android:state_enabled="false">
+        <layer-list>
+            <item>
+                <shape
+                    android:shape="oval"
+                    android:innerRadius="27dp"
+                    android:useLevel="false"
+                    >
+                    <solid
+                        android:color="#B3000000"
+                        />
+                </shape>
+            </item>
+            <item>
+                <shape
+                    android:shape="ring"
+                    android:innerRadius="27dp"
+                    android:thickness="6dp"
+                    android:useLevel="false"
+                    >
+                    <solid
+                        android:color="#99272727"
+                        />
+                </shape>
+            </item>
+            <item android:width="66dp" android:height="66dp">
+                <bitmap
+                    android:src="@drawable/ico_audio_trimming_disable"
+                    android:gravity="center"
+                    />
+            </item>
+        </layer-list>
+    </item>
+</selector>

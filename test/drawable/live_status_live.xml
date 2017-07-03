@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 配信されている時 -->
+    <item android:state_activated="true">
+        <layer-list>
+            <item android:id="@+id/live_status_gradient">
+                <shape>
+                    <corners android:radius="24dp" />
+                    <solid android:color="@color/color_live" />
+                </shape>
+            </item>
+            <item android:left="2dp" android:top="3dp" android:right="2dp" android:bottom="3dp">
+                <bitmap android:src="@drawable/ico_live_logo" />
+            </item>
+        </layer-list>
+    </item>
+
+    <!-- 配信されていない時 -->
+    <item android:state_activated="false">
+        <layer-list>
+            <item>
+                <shape>
+                    <corners android:radius="24dp" />
+                    <solid android:color="#00000000"/>
+                    <stroke android:color="#ffffff" android:width="2dp"/>
+                </shape>
+            </item>
+            <item android:left="2dp" android:top="3dp" android:right="2dp" android:bottom="3dp">
+                <bitmap android:src="@drawable/ico_live_logo" />
+            </item>
+        </layer-list>
+    </item>
+</selector>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- https://github.com/Clans/FloatingActionButton -->
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/button_movie_edit_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_marginRight="15dp"
+        android:translationZ="1dp"
+        android:visibility="invisible"
+        app:menu_fab_size="normal"
+        app:menu_colorNormal="#f8e71c"
+        app:menu_colorPressed="#dfcf19"
+        app:menu_animationDelayPerItem="20"
+        app:menu_icon="@drawable/ico_fab_add"
+        app:menu_labels_textSize="10sp"
+        app:menu_labels_colorNormal="#B0333333"
+        app:menu_labels_colorPressed="#B0444444"
+        >
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/button_movie_edit_audio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ico_fab_music"
+            app:fab_size="mini"
+            app:fab_colorNormal="#f8e71c"
+            app:fab_colorPressed="#dfcf19"
+            app:fab_label="@string/movie_editor_operation_audio_caption"
+            />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/button_movie_edit_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ico_fab_camera"
+            app:fab_size="mini"
+            app:fab_colorNormal="#f8e71c"
+            app:fab_colorPressed="#dfcf19"
+            app:fab_label="@string/movie_editor_operation_camera_caption"
+            />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/button_movie_edit_import"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ico_fab_import"
+            app:fab_size="mini"
+            app:fab_colorNormal="#f8e71c"
+            app:fab_colorPressed="#dfcf19"
+            app:fab_label="@string/movie_editor_operation_import_caption"
+            />
+
+    </com.github.clans.fab.FloatingActionMenu>
+</merge>

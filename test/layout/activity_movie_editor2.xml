@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<LinearLayout
+		android:id="@+id/layout"
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="@color/background_almost_black">
+
+		<!-- Toolbar -->
+		<include layout="@layout/toolbar" />
+
+		<FrameLayout
+			android:id="@+id/movie_layout"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="#f2f2f2">
+
+			<!-- 動画プレイヤー -->
+			<tv.mixch.widget.RawMovieView
+				android:id="@+id/movie_player"
+				android:layout_width="0dp"
+				android:layout_height="0dp"
+				android:visibility="invisible" />
+
+			<ImageView
+				android:id="@+id/movie_editor_logo"
+				android:layout_width="173dp"
+				android:layout_height="28dp"
+				android:layout_gravity="center"
+				android:scaleType="fitXY"
+				android:src="@drawable/logo_mixch_grey"
+				/>
+
+			<!-- 再生アイコン -->
+			<ImageView
+				android:id="@+id/movie_icon"
+				android:layout_width="45dp"
+				android:layout_height="52dp"
+				android:layout_gravity="center"
+				android:scaleType="fitXY"
+				android:src="@drawable/btn_cue"
+				android:visibility="invisible" />
+
+			<!-- クリップ操作のメニュー -->
+			<include
+				layout="@layout/view_movie_editor_clip_menu"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="bottom"
+				android:layout_marginBottom="32dp"
+				/>
+
+			<!-- オーディオ操作メニュー -->
+			<include
+				layout="@layout/view_movie_editor_audio_menu"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="bottom"
+				android:layout_marginBottom="32dp"
+				/>
+
+
+			<!-- BGMのタイトル -->
+			<TextView
+				android:id="@+id/movie_editor_audio_title"
+				android:layout_width="wrap_content"
+				android:layout_height="26dp"
+				android:layout_gravity="left|bottom"
+				android:layout_marginLeft="11dp"
+				android:paddingRight="12dp"
+				android:layout_marginBottom="3dp"
+				android:gravity="left|center_vertical"
+				android:textColor="#ffffff"
+				android:drawableLeft="@drawable/btn_music_link"
+				android:drawablePadding="4dp"
+				android:maxLines="1"
+				android:background="@drawable/btn_music_link_bg"
+				android:visibility="invisible"
+				/>
+
+		</FrameLayout>
+
+		<FrameLayout
+			android:id="@+id/movie_editor_footer"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<LinearLayout
+				android:id="@+id/movie_editor_timeline"
+				android:visibility="invisible"
+				android:orientation="vertical"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content">
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:paddingTop="4dp"
+					android:paddingBottom="4dp"
+					android:background="@color/background_more_dark"
+					android:orientation="horizontal">
+					<TextView
+						android:id="@+id/movie_current"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_gravity="center"
+						android:text="0.00"
+						android:textSize="12sp"
+						android:textColor="#cccccc"
+						android:textIsSelectable="false" />
+					<SeekBar
+						android:id="@+id/movie_progress"
+						style="@android:style/Widget.Holo.Light.ProgressBar.Horizontal"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:layout_gravity="center" />
+					<TextView
+						android:id="@+id/movie_duration"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_gravity="center"
+						android:text="0.00"
+						android:textSize="12sp"
+						android:textColor="#cccccc"
+						android:textIsSelectable="false" />
+				</LinearLayout>
+
+				<!-- チャプターのリスト -->
+				<tv.mixch.widget.MovieChapterListView
+					android:id="@+id/chapter_list"
+					android:scrollbars="horizontal"
+					android:layout_width="match_parent"
+					android:layout_height="120dp"
+					android:layout_gravity="bottom" />
+
+			</LinearLayout>
+
+			<LinearLayout
+				android:id="@+id/movie_editor_first_view"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@color/background_almost_black"
+				android:baselineAligned="false"
+				android:orientation="horizontal">
+
+				<!--BGM選択-->
+				<LinearLayout
+					android:id="@+id/movie_editor_first_view_audio"
+					android:layout_width="0dp"
+					android:layout_height="match_parent"
+					android:layout_weight="1"
+					android:orientation="vertical"
+					android:gravity="center_horizontal">
+					<ImageView
+						android:layout_width="match_parent"
+						android:layout_height="92dp"
+						android:scaleType="center"
+						android:paddingTop="8dp"
+						android:paddingBottom="4dp"
+						android:background="@color/background_more_dark"
+						android:src="@drawable/btn_make_bgm"
+						/>
+					<TextView
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="16dp"
+						android:gravity="center"
+						android:textColor="#808080"
+						android:textSize="12sp"
+						android:text="@string/movie_editor_operation_audio_desc"/>
+				</LinearLayout>
+
+				<!--撮影-->
+				<LinearLayout
+					android:id="@+id/movie_editor_first_view_camera"
+					android:layout_width="0dp"
+					android:layout_height="match_parent"
+					android:layout_weight="1"
+					android:orientation="vertical"
+					android:gravity="center_horizontal">
+					<ImageView
+						android:layout_width="match_parent"
+						android:layout_height="92dp"
+						android:scaleType="center"
+						android:paddingTop="8dp"
+						android:paddingBottom="4dp"
+						android:background="@color/background_more_dark"
+						android:src="@drawable/btn_make_camera"
+						/>
+					<TextView
+						android:id="@+id/movie_editor_first_operation_camera_desc"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="16dp"
+						android:gravity="center"
+						android:textColor="#808080"
+						android:textSize="12sp"
+						android:text="@string/movie_editor_operation_camera_desc" />
+				</LinearLayout>
+
+				<!--インポート-->
+				<LinearLayout
+					android:id="@+id/movie_editor_first_view_import"
+					android:layout_width="0dp"
+					android:layout_height="match_parent"
+					android:layout_weight="1"
+					android:orientation="vertical"
+					android:gravity="center_horizontal">
+					<ImageView
+						android:layout_width="match_parent"
+						android:layout_height="92dp"
+						android:scaleType="center"
+						android:paddingTop="8dp"
+						android:paddingBottom="4dp"
+						android:background="@color/background_more_dark"
+						android:src="@drawable/btn_make_import"
+						/>
+					<TextView
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="16dp"
+						android:gravity="center"
+						android:textColor="#808080"
+						android:textSize="12sp"
+						android:text="@string/movie_editor_operation_import_desc"/>
+				</LinearLayout>
+			</LinearLayout>
+		</FrameLayout>
+	</LinearLayout>
+	<include layout="@layout/view_movie_editor_main_menu" />
+</FrameLayout>

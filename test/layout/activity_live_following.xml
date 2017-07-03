@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/activity_timeline_live"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <include layout="@layout/toolbar" />
+
+        <tv.mixch.widget.StatableRefreshLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:content="@+id/content"
+            app:empty="@+id/empty"
+            app:loading="@+id/loading"
+            >
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <!--空の時のビューをリフレッシュするとリフレッシュアイコンの表示がおかしくなるので-->
+                <!--スクロールビューで囲んでいる-->
+                <ScrollView
+                    android:id="@+id/empty"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fillViewport="true"
+                    android:visibility="gone"
+                    >
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="139dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ico_logo2_mixch_grey"
+                        android:layout_gravity="center"
+                        />
+                </ScrollView>
+
+                <tv.mixch.widget.LiveGridView
+                    android:id="@+id/content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    />
+
+                <ProgressBar
+                    android:id="@+id/loading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    />
+
+            </FrameLayout>
+        </tv.mixch.widget.StatableRefreshLayout>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- https://github.com/Clans/FloatingActionButton -->
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+>
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/button_menu_create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="12dp"
+        android:layout_marginRight="12dp"
+        android:translationZ="1dp"
+        android:visibility="visible"
+        app:menu_icon="@drawable/ic_create"
+        app:menu_fab_size="normal"
+        app:menu_colorNormal="#f8e71c"
+        app:menu_colorPressed="#dfcf19"
+        app:menu_animationDelayPerItem="20"
+        app:menu_labels_textSize="10sp"
+        app:menu_labels_colorNormal="#B0333333"
+        app:menu_labels_colorPressed="#B0444444"
+    >
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/button_live_broadcast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ico_action_live"
+            app:fab_size="mini"
+            app:fab_colorNormal="#f8e71c"
+            app:fab_colorPressed="#dfcf19"
+            app:fab_label="@string/live_broadcast_operation"
+        />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/button_movie_create"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ico_action_video_create"
+            app:fab_size="mini"
+            app:fab_colorNormal="#f8e71c"
+            app:fab_colorPressed="#dfcf19"
+            app:fab_label="@string/movie_create_operation"
+        />
+
+    </com.github.clans.fab.FloatingActionMenu>
+</merge>

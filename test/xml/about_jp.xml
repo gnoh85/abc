@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent" android:layout_width="match_parent">
+	<Preference android:title="@string/pref_help" android:key="pref_help">
+		<intent
+			android:action="android.intent.action.VIEW"
+			android:data="https://mixch.tv/p/iprf31tk" />
+	</Preference>
+	<Preference android:title="@string/pref_help_terms" android:key="pref_help_terms">
+		<intent
+			android:action="android.intent.action.VIEW"
+			android:data="https://mixch.tv/help/terms.html" />
+	</Preference>
+	<Preference android:title="@string/pref_help_privacy" android:key="pref_help_privacy">
+		<intent
+			android:action="android.intent.action.VIEW"
+			android:data="https://mixch.tv/help/privacy.html" />
+	</Preference>
+	<Preference android:title="@string/pref_help_email" android:key="pref_help_email">
+	</Preference>
+	<Preference android:title="@string/pref_account_delete" android:key="pref_account_delete">
+	</Preference>
+	<Preference android:title="@string/pref_help_other_services" android:key="pref_help_other_services">
+		<intent
+			android:action="android.intent.action.VIEW"
+			android:data="http://services.donuts.ne.jp/?s=mix" />
+	</Preference>
+</PreferenceScreen>

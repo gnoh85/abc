@@ -1,0 +1,368 @@
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="live" type="tv.mixch.model.LiveVModel" />
+        <import type="android.view.View" />
+    </data>
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:onClick="@{live.listener.onRootClick}"
+    >
+    <!-- 配信を写す場所 -->
+    <tv.mixch.media.player.ExoTextureHlsVideoView
+        android:id="@+id/video"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="@{live.initializing ? View.GONE : View.VISIBLE}"
+        />
+    <!-- 配信されていない時用の画面 -->
+    <ImageView
+        android:id="@+id/video_default"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/logo_mixch_grey"
+        android:background="#20000000"
+        android:scaleType="center"
+        android:contentDescription=""
+        android:visibility="@{live.initializing ? View.VISIBLE : View.GONE}"
+        />
+
+    <!-- バッファリング中に表示するプログレスバー -->
+    <tv.mixch.widget.live.MessageProgressView
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="72dp"
+        android:layout_gravity="center"
+        />
+    <!-- コメントを見やすくするための下段カバー -->
+    <View
+        android:id="@+id/below_cover"
+        android:layout_width="match_parent"
+        android:layout_height="204dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/bg_live_below_cover"
+        android:visibility="@{live.showingKeyboard ? View.GONE : View.VISIBLE}"
+        />
+    <!-- パーツを見やすくするための上段カバー -->
+    <View
+        android:id="@+id/above_cover"
+        android:layout_width="match_parent"
+        android:layout_height="144dp"
+        android:background="@drawable/bg_live_above_cover"
+        android:visibility="@{(live.fullscreen || live.showingKeyboard) ? View.GONE : View.VISIBLE}"
+        />
+    <!-- 本体 -->
+    <LinearLayout
+        android:id="@+id/live_ui"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:fitsSystemWindows="true"
+        android:visibility="@{live.fullscreen ? View.GONE : View.VISIBLE}"
+        >
+        <!-- 上段 -->
+        <LinearLayout
+            android:id="@+id/above_parts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="@{live.showingKeyboard ? View.GONE : View.VISIBLE}"
+            >
+            <!--上段 各種情報部分-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                >
+                <!-- 上段1（アイコン stats ファンボタン）-->
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:shrinkColumns="1"
+                    >
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        >
+                        <!-- プロフィール画像 -->
+                        <tv.mixch.widget.CircleNetworkImageView
+                            android:id="@+id/host_profile_image"
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:contentDescription=""
+                            app:imageUrl="@{live.hostProfileImage}"
+                            app:defaultImageResId="@drawable/mysteryman"
+                            app:circleBorderWidth="2dp"
+                            app:borderColor="#ffffff"
+                            android:onClick="@{live.listener.onOpenProfile}"
+                            />
+                        <!-- 名前とコメント数と訪問者数 -->
+                        <RelativeLayout
+                            android:id="@+id/live_stats"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            >
+                            <!--名前-->
+                            <TextView
+                                android:id="@+id/live_profile_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="24dp"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentLeft="true"
+                                android:textColor="@android:color/white"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:text="@{live.hostProfileName}"
+                                android:gravity="center_vertical"
+                                android:lines="1"
+                                android:ellipsize="end"
+                                />
+                            <!-- 視聴者数 -->
+                            <TextView
+                                android:id="@+id/visitor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="20dp"
+                                android:layout_alignParentLeft="true"
+                                android:layout_below="@id/live_profile_name"
+                                android:text="@{live.visitor}"
+                                android:textColor="@android:color/white"
+                                android:textSize="13sp"
+                                android:gravity="center_vertical"
+                                android:drawableLeft="@drawable/ico_live_visitor"
+                                android:drawablePadding="5dp"
+                                />
+                            <!-- コメント数 -->
+                            <TextView
+                                android:id="@+id/comments"
+                                android:layout_width="wrap_content"
+                                android:layout_height="20dp"
+                                android:layout_toRightOf="@id/visitor"
+                                android:layout_below="@id/live_profile_name"
+                                android:paddingLeft="8dp"
+                                android:text="@{live.comments}"
+                                android:textColor="@android:color/white"
+                                android:textSize="13sp"
+                                android:gravity="center_vertical"
+                                android:drawableLeft="@drawable/ico_live_comment"
+                                android:drawablePadding="5dp"
+                                />
+                        </RelativeLayout>
+                        <!-- ファンボタン -->
+                        <tv.mixch.widget.live.FanButton
+                            android:id="@+id/fan_button"
+                            android:layout_width="72dp"
+                            android:layout_height="36dp"
+                            android:layout_marginLeft="8dp"
+                            app:following="@{live.following}"
+                            app:fan="@{live.fan}"
+                            android:onClick="@{live.listener.onFanRequest}"
+                            />
+                    </TableRow>
+                </TableLayout>
+                <!-- 上段2（ライブステータス 配信時間 カラオケタイトル）-->
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:shrinkColumns="2"
+                    >
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        >
+                        <!-- 配信ステータス -->
+                        <tv.mixch.widget.live.StatusView
+                            android:id="@+id/status"
+                            android:layout_width="48dp"
+                            android:layout_height="20dp"
+                            android:contentDescription=""
+                            app:kind="@{live.kind}"
+                            app:playing="@{live.playing}"
+                            app:alive="@{live.alive}"
+                            />
+                        <!-- 配信時間 -->
+                        <TextView
+                            android:id="@+id/duration"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:layout_marginLeft="8dp"
+                            android:textSize="12sp"
+                            android:textColor="@android:color/white"
+                            android:textStyle="bold"
+                            android:text="@{live.duration}"
+                            />
+                        <!-- 現在かかっているカラオケのタイトル -->
+                        <TextView
+                            android:id="@+id/music"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textSize="12sp"
+                            android:textColor="@android:color/white"
+                            android:background="@drawable/bg_live_song"
+                            android:text="@{live.music}"
+                            android:gravity="center_vertical"
+                            android:layout_marginLeft="8dp"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="12dp"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:drawableLeft="@drawable/ico_live_song"
+                            android:drawablePadding="6dp"
+                            android:visibility="@{live.playing ? View.VISIBLE : View.GONE}"
+                            />
+                    </TableRow>
+                </TableLayout>
+                <!-- 配信タイトル -->
+                <TextView
+                    android:id="@+id/live_title_port"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="#ffffff"
+                    android:text="@{live.title}"
+                    android:gravity="left|center_vertical"
+                    android:lines="1"
+                    android:ellipsize="end"
+                    />
+            </LinearLayout>
+            <!--閉じるボタンとSSボタン-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+                <!-- 閉じるボタン -->
+                <ImageView
+                    android:id="@+id/live_exit"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginRight="4dp"
+                    android:src="@drawable/ico_live_exit"
+                    android:padding="8dp"
+                    android:contentDescription=""
+                    android:onClick="@{live.listener.onExit}"
+                    />
+                <!-- スクリーンショット -->
+                <FrameLayout
+                    android:id="@+id/live_screenshot"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="4dp"
+                    android:visibility="@{live.initializing ? View.GONE : View.VISIBLE}"
+                    >
+                    <!-- 画像 -->
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:padding="8dp"
+                        android:src="@drawable/ico_ss"
+                        android:layout_gravity="center"
+                        android:contentDescription=""
+                        android:onClick="@{live.listener.onCapture}"
+                        android:clickable="@{live.capturing ? false : true}"
+                        />
+                    <!-- プログレスバー -->
+                    <ProgressBar
+                        android:id="@+id/live_screenshot_progress"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center"
+                        android:visibility="@{live.capturing ? View.VISIBLE : View.GONE}"
+                        />
+                </FrameLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <!-- 中段（キーボード出現によって押し上げられるときの余白）-->
+        <View
+            android:id="@+id/space"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:onClick="@{live.listener.onSpaceClick}"
+            />
+        <!-- 下段 -->
+        <FrameLayout
+            android:id="@+id/below_parts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginBottom="4dp"
+            >
+            <!-- コメントのログ -->
+            <tv.mixch.widget.LiveCommentView
+                android:id="@+id/comment_log"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fadeScrollbars="false"
+                />
+            <!-- Mixchのすかし -->
+            <ImageView
+                android:id="@+id/live_watermark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ico_watermark"
+                android:layout_gravity="bottom|right"
+                android:contentDescription=""
+                />
+        </FrameLayout>
+        <!-- コメント入力スペース -->
+        <LinearLayout
+            android:id="@+id/live_comment_edit_space"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/live_editor_height"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            android:background="@drawable/live_edit_text"
+            android:onClick="@{live.listener.onCommentEdit}"
+            >
+            <!-- 視聴者のプロフィール画像 -->
+            <tv.mixch.widget.CircleNetworkImageView
+                android:id="@+id/live_guest_profile_thumbnail"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:contentDescription=""
+                app:defaultImageResId="@drawable/mysteryman"
+                app:imageUrl="@{live.guestProfileImage}"
+                app:circleBorderWidth="1dp"
+                app:borderColor="#ffffff"
+                />
+            <!-- コメント入力欄 -->
+            <tv.mixch.widget.EditText
+                android:id="@+id/editor"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="left|center_vertical"
+                android:textColor="#424242"
+                android:textSize="14sp"
+                android:inputType="text"
+                android:imeOptions="actionSend|flagNoExtractUi"
+                android:ellipsize="middle"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>
+</layout>

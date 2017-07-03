@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <data>
+        <variable name="category" type="tv.mixch.widget.LiveCategoryView.VModel"/>
+        <variable name="categoryBg" type="tv.mixch.model.BgDrawableVModel" />
+    </data>
+
+    <!--アイテムをセンタリング表示できなかったのでセンタリングするためのレイアウトを1つ追加している-->
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:onClick="@{category.onClick}"
+        >
+        <LinearLayout
+            android:id="@+id/background"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:paddingTop="@{category.active ? @dimen/live_category_padding_selected : @dimen/live_category_padding_default}"
+            android:paddingBottom="@{category.active ? @dimen/live_category_padding_selected : @dimen/live_category_padding_default}"
+            app:startColor="@{categoryBg.startColor}"
+            app:endColor="@{categoryBg.endColor}"
+            app:radius="@{categoryBg.radius}"
+            >
+            <tv.mixch.widget.NetworkImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:scaleType="centerInside"
+                app:imageUrl="@{category.iconUrl}"
+                />
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:text="@{category.text}"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#ffffff"
+                android:gravity="center"
+                />
+        </LinearLayout>
+    </FrameLayout>
+</layout>

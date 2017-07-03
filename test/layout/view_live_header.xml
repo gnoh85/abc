@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_live_above_cover"
+    android:orientation="vertical"
+    >
+
+    <!--Statsと閉じるボタン-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <!--Stats-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingTop="8dp"
+            android:paddingLeft="8dp"
+            >
+            <!--上段１-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left|center_vertical"
+                android:orientation="horizontal"
+                >
+                <!-- 配信状態 -->
+                <tv.mixch.widget.live.StatusView
+                    android:id="@+id/live_status"
+                    android:layout_width="49dp"
+                    android:layout_height="21dp"
+                    app:kind="0"
+                    />
+                <!-- 配信タイトル -->
+                <TextView
+                    android:id="@+id/live_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:background="@drawable/bg_rounded_grey"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:textSize="14sp"
+                    android:textColor="#FFFFFF"
+                    android:text="@string/live_title_hint"
+                    android:lines="1"
+                    android:ellipsize="end"
+                    />
+                <android.support.v4.widget.Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    />
+            </LinearLayout>
+
+            <!--上段２-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal"
+                android:gravity="left|center_vertical"
+                >
+                <!-- 配信時間 -->
+                <TextView
+                    android:id="@+id/live_duration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ico_live_time"
+                    android:drawablePadding="6dp"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:gravity="left|center_vertical"
+                    android:text="--:--"
+                    />
+
+                <!-- 閲覧数 -->
+                <TextView
+                    android:id="@+id/live_guest_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:drawableLeft="@drawable/ico_live_visitor"
+                    android:drawablePadding="6dp"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:gravity="left|center_vertical"
+                    android:text="-"
+                    />
+
+                <!-- コメント数 -->
+                <TextView
+                    android:id="@+id/live_comment_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:drawableLeft="@drawable/ico_live_comment"
+                    android:drawablePadding="6dp"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:gravity="left|center_vertical"
+                    android:text="-"
+                    />
+
+                <!-- ファンの数 -->
+                <TextView
+                    android:id="@+id/fan_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:drawableLeft="@drawable/ico_fan_live"
+                    android:drawablePadding="6dp"
+                    android:gravity="left|center_vertical"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:text="-"
+                    />
+            </LinearLayout>
+
+            <!--上段3-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal"
+                android:gravity="left|center_vertical">
+
+                <ImageView
+                    android:id="@+id/lyric_show_btn"
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:padding="8dp"
+                    android:src="@drawable/btn_karaoke_lyric"
+                    />
+
+                <ImageView
+                    android:id="@+id/select_picture_btn"
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:padding="8dp"
+                    android:src="@drawable/btn_picture_select"
+                />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <!-- 閉じるボタン -->
+        <ImageView
+            android:id="@+id/live_exit"
+            android:layout_width="51dp"
+            android:layout_height="51dp"
+            android:src="@drawable/ico_live_exit"
+            android:padding="8dp"
+            android:contentDescription=""
+            />
+    </LinearLayout>
+</merge>

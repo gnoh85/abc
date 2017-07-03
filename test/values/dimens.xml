@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="margin">8dp</dimen>
+    <dimen name="home_caption_text_size">16sp</dimen>
+    <dimen name="movie_button_text_size">14sp</dimen>
+    <dimen name="movie_user_text_size">16sp</dimen>
+    <dimen name="movie_memo_text_size">14sp</dimen>
+    <dimen name="movie_date_text_size">12sp</dimen>
+    <dimen name="profile_name_text_size">16sp</dimen>
+    <dimen name="profile_bio_text_size">13sp</dimen>
+    <dimen name="profile_edit_image_size">96dp</dimen>
+    <dimen name="profile_edit_vertical_margin">20dp</dimen>
+    <dimen name="notification_user_image_size">64dp</dimen>
+    <dimen name="notification_comment_text_size">14sp</dimen>
+    <dimen name="notification_date_text_size">11sp</dimen>
+    <dimen name="movie_grid_stat_text_size">10sp</dimen>
+    <dimen name="comment_gap_text_size">14sp</dimen>
+    <dimen name="comment_name_text_size">14sp</dimen>
+    <dimen name="comment_date_text_size">12sp</dimen>
+    <dimen name="comment_comment_text_size">14sp</dimen>
+    <dimen name="comment_user_image_size">32dp</dimen>
+    <dimen name="comment_movie_image_size">120dp</dimen>
+    <dimen name="movie_range_time_text_size">8sp</dimen>
+    <dimen name="comment_remain_text_size">14sp</dimen>
+    <dimen name="login_label_text_size">16sp</dimen>
+    <dimen name="login_layout_padding">8dp</dimen>
+    <dimen name="mypage_stat_caption_text_size">12sp</dimen>
+    <dimen name="mypage_stat_value_text_size">16sp</dimen>
+    <dimen name="drawer_width">240dp</dimen>
+    <dimen name="drawer_item_height">42dp</dimen>
+    <dimen name="drawer_item_padding">16dp</dimen>
+    <dimen name="drawer_item_icon_size">32dp</dimen>
+    <dimen name="drawer_item_text_size">15sp</dimen>
+    <dimen name="user_fan_button_text_size">18sp</dimen>
+    <dimen name="user_fan_label_text_size">14sp</dimen>
+    <dimen name="movie_editor_hint_text_size">10sp</dimen>
+    <dimen name="dubbing_seconds_text_size">16sp</dimen>
+    <dimen name="dubbing_millis_text_size">14sp</dimen>
+    <dimen name="movie_editor_note_text_size">16sp</dimen>
+    <dimen name="user_fan_request_name_text_size">16sp</dimen>
+    <dimen name="user_fan_request_comment_text_size">14sp</dimen>
+    <dimen name="movie_user_image_size">56dp</dimen>
+    <dimen name="movie_button_height">50dp</dimen>
+    <dimen name="movie_button_mark_size">24dp</dimen>
+    <dimen name="movie_button_twitter_size">36dp</dimen>
+    <dimen name="movie_button_google_size">32dp</dimen>
+    <dimen name="movie_view_margin">8dp</dimen>
+    <dimen name="layout_padding">8dp</dimen>
+    <dimen name="users_user_image_size">32dp</dimen>
+    <dimen name="userS_home_icon_fan_size">16dp</dimen>
+    <dimen name="card_shadow_corner_radius">4dp</dimen>
+    <dimen name="card_shadow_padding_left">1dp</dimen>
+    <dimen name="card_shadow_padding_top">1dp</dimen>
+    <dimen name="card_shadow_padding_right">2dp</dimen>
+    <dimen name="card_shadow_padding_bottom">2dp</dimen>
+
+    <!-- for version2 -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="movie_clip_size">80dp</dimen>
+    <dimen name="tick_height">15dp</dimen>
+    <dimen name="filter_icon_width">77dp</dimen>
+    <dimen name="filter_icon_height">56dp</dimen>
+
+
+
+    <dimen name="dialog_width_portrait">270dp</dimen>
+    <dimen name="dialog_height_portrait">480dp</dimen>
+    <dimen name="dialog_width_landscape">380dp</dimen>
+    <dimen name="dialog_height_landscape">270dp</dimen>
+    <dimen name="social_login_button_height">48dp</dimen>
+
+
+    <!-- 56 + 12 * 2 -->
+    <dimen name="footer_height">80dp</dimen>
+    <dimen name="footer_height_support">116dp</dimen>
+
+    <dimen name="live_comments_height">172dp</dimen>
+    <dimen name="live_comments_height_land">112dp</dimen>
+    <dimen name="live_editor_height">38dp</dimen>
+    <dimen name="live_category_radius">27dp</dimen>
+    <dimen name="live_category_padding_selected">10dp</dimen>
+    <dimen name="live_category_padding_default">6dp</dimen>
+    <dimen name="dialog_radius">12dp</dimen>
+
+</resources>

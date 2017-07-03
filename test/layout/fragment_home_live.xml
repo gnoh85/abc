@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable name="categoryHeaderBg" type="tv.mixch.model.BgDrawableVModel"/>
+        <!--TODO:FragmentLiveModelとしてまとめる-->
+        <variable name="headerHeight" type="int"/>
+        <variable name="openFollowList" type="android.view.View.OnClickListener" />
+        <variable name="moreFollows" type="boolean" />
+        <import type="android.view.View" />
+    </data>
+
+    <android.support.design.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="@{headerHeight}"
+            >
+
+            <LinearLayout
+                android:id="@+id/follow_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingLeft="12dp"
+                android:paddingRight="4dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
+                android:background="#f4f4f4"
+                >
+
+                <tv.mixch.widget.HomeLiveFollowCell
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    />
+
+                <tv.mixch.widget.HomeLiveFollowCell
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    />
+
+                <tv.mixch.widget.HomeLiveFollowCell
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    />
+
+                <tv.mixch.widget.HomeLiveFollowCell
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/btn_next_gray_30"
+                    android:padding="16dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:scaleType="centerInside"
+                    android:onClick="@{moreFollows ? openFollowList : null}"
+                    android:alpha="@{moreFollows ? 1f : 0.35f}"
+                    />
+            </LinearLayout>
+
+
+            <FrameLayout
+                android:id="@+id/category_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="4dp"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:startColor="@{categoryHeaderBg.startColor}"
+                app:endColor="@{categoryHeaderBg.endColor}"
+                >
+                <tv.mixch.widget.LiveCategoryView
+                    android:id="@+id/category"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="4dp"
+                    android:paddingRight="4dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:background="#ffffff"
+                    />
+            </FrameLayout>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <tv.mixch.widget.StatableRefreshLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:content="@+id/content"
+            app:empty="@+id/empty"
+            app:loading="@+id/loading"
+            >
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <!--空の時のビューをリフレッシュするとリフレッシュアイコンの表示がおかしくなるので-->
+                <!--スクロールビューで囲んでいる-->
+                <ScrollView
+                    android:id="@+id/empty"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fillViewport="true"
+                    android:visibility="gone"
+                    >
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="139dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ico_logo2_mixch_grey"
+                        android:layout_gravity="center"
+                        />
+                </ScrollView>
+
+                <tv.mixch.widget.HomeLiveGridView
+                    android:id="@+id/content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    />
+
+                <ProgressBar
+                    android:id="@+id/loading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    />
+
+            </FrameLayout>
+        </tv.mixch.widget.StatableRefreshLayout>
+
+    </android.support.design.widget.CoordinatorLayout>
+</layout>

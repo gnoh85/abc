@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_height="match_parent" android:layout_width="match_parent">
+
+	<PreferenceCategory android:title="@string/pref_links">
+		<Preference
+			android:key="link_twitter"
+			android:title="Twitter"
+			android:summary="@string/pref_link_twitter_summary"
+			android:defaultValue="" />
+	</PreferenceCategory>
+
+	<PreferenceCategory android:title="@string/pref_push">
+		<SwitchPreference
+			android:key="push_like"
+			android:title="@string/pref_push_like"
+			android:summary="@string/pref_push_like_summary"
+			/>
+		<SwitchPreference
+			android:key="push_comment"
+			android:title="@string/pref_push_comment"
+			android:summary="@string/pref_push_comment_summary"
+			/>
+		<SwitchPreference
+			android:key="push_timeline"
+			android:title="@string/pref_push_timeline"
+			android:summary="@string/pref_push_timeline_summary"
+			/>
+		<SwitchPreference
+			android:key="push_live"
+			android:title="@string/pref_push_live"
+			android:summary="@string/pref_push_live_summary"
+			/>
+	</PreferenceCategory>
+
+	<PreferenceCategory android:title="@string/pref_settings">
+		<ListPreference
+			android:key="region"
+			android:title="@string/pref_region"
+			android:summary=""
+			android:entries="@array/country_names"
+			android:entryValues="@array/country_codes" />
+	</PreferenceCategory>
+</PreferenceScreen>

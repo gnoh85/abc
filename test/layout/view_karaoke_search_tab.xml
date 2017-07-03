@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/dialog_root"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#EFEFEF">
+
+
+    <View
+        android:id="@+id/blank_cover"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="70dp"
+        android:background="#ffffff"
+        />
+
+    <tv.mixch.widget.KaraokeSongListView
+        android:id="@+id/karaoke_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="56dp">
+    </tv.mixch.widget.KaraokeSongListView>
+
+    <tv.mixch.widget.AnimatedEditText
+        android:id="@+id/animated_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="14dp"
+        android:background="#EFEFEF"
+    />
+
+
+
+</FrameLayout>

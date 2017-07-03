@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:background="#eeeeee"
+    >
+
+    <include layout="@layout/toolbar"/>
+
+    <!--引き継ぎタイトル-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left|center_vertical"
+        android:textSize="14sp"
+        android:layout_marginTop="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:text="@string/title_account_transfer"
+        />
+
+    <!--引き継ぎ説明-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left|center_vertical"
+        android:textSize="14sp"
+        android:layout_marginTop="4dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:text="@string/desc_account_transfer1"
+        android:background="#ffffff"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#eeeeee"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left|center_vertical"
+        android:textSize="14sp"
+        android:paddingTop="8dp"
+        android:paddingBottom="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:text="@string/desc_account_transfer2"
+        android:background="@drawable/card_bg"
+        />
+
+    <!--引き継ぎ状況タイトル-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left|center_vertical"
+        android:textSize="14sp"
+        android:layout_marginTop="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:text="@string/title_account_transfer_status"
+        />
+
+    <!--引き継ぎ状況説明-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="4dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:background="@drawable/card_bg"
+        >
+
+        <!--Socialで引き継ぎ可能-->
+        <LinearLayout
+            android:id="@+id/account_transfer_ok"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            >
+
+            <!--Social引き継ぎ説明-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left|center_vertical"
+                android:textSize="14sp"
+                android:text="@string/desc_account_transfer_status_ok"
+                />
+
+            <!--Twitter-->
+            <TextView
+                android:id="@+id/social_id_twitter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:gravity="left|center_vertical"
+                android:textSize="14sp"
+                android:drawablePadding="8dp"
+                android:drawableLeft="@drawable/ico_social_twitter_round"
+                android:visibility="gone"
+                />
+
+            <!--Facebook-->
+            <TextView
+                android:id="@+id/social_id_facebook"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:gravity="left|center_vertical"
+                android:textSize="14sp"
+                android:drawablePadding="8dp"
+                android:drawableLeft="@drawable/ico_social_facebook_round"
+                android:visibility="gone"
+                />
+
+            <!--google-->
+            <TextView
+                android:id="@+id/social_id_google"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:gravity="left|center_vertical"
+                android:textSize="14sp"
+                android:drawablePadding="8dp"
+                android:drawableLeft="@drawable/ico_social_google_round"
+                android:visibility="gone"
+                />
+
+            <!--line-->
+            <TextView
+                android:id="@+id/social_id_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:gravity="left|center_vertical"
+                android:textSize="14sp"
+                android:drawablePadding="8dp"
+                android:drawableLeft="@drawable/ico_social_line_round"
+                android:visibility="gone"
+                />            
+        </LinearLayout>
+
+        <!--引き継ぎコードで引き継ぎ可能-->
+        <LinearLayout
+            android:id="@+id/account_transfer_ng"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            >
+
+            <!--引き継ぎコード説明-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left|center_vertical"
+                android:textSize="14sp"
+                android:text="@string/desc_account_transfer_status_ng"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/account_transfer_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:textSize="14sp"
+            android:text="@string/error"
+            android:visibility="gone"
+            />
+    </FrameLayout>
+
+</LinearLayout>

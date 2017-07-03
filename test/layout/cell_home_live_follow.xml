@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <data>
+        <import type="android.view.View"/>
+        <variable name="followBg" type="tv.mixch.model.BgDrawableVModel" />
+        <variable name="imageUrl" type="String" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+
+        <!--背景色（ライブが有るときはミクチャグラデーション、ないときは灰色）-->
+        <View
+            android:layout_width="62dp"
+            android:layout_height="62dp"
+            android:layout_gravity="center"
+            app:startColor="@{followBg.startColor}"
+            app:endColor="@{followBg.endColor}"
+            app:angle="@{followBg.angle}"
+            app:radius="@{followBg.radius}"
+            />
+
+        <!--インナーボーダー（白）-->
+        <View
+            android:layout_width="62dp"
+            android:layout_height="62dp"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_ring_white"
+            />
+
+        <!--ライブが有る時のプロフィール画像-->
+        <tv.mixch.widget.CircleNetworkImageView
+            android:id="@+id/user_profile_image"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:layout_gravity="center"
+            android:scaleType="centerInside"
+            app:imageUrl="@{imageUrl}"
+            app:defaultImageResId="@drawable/mysteryman"
+            android:visibility="@{imageUrl != null ? View.VISIBLE : View.GONE}"
+            />
+
+        <!--ライブがない時のロゴ-->
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center"
+            android:src="@drawable/logo_mixch_white"
+            android:visibility="@{imageUrl != null ? View.GONE : View.VISIBLE}"
+            />
+
+    </FrameLayout>
+</layout>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<!-- Content -->
+	<tv.mixch.widget.ScrollView
+		android:id="@+id/scroll_view"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+		<LinearLayout
+			android:id="@+id/scroll_layout"
+			android:visibility="invisible"
+			android:orientation="vertical"
+			android:background="#fff8f7f4"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+			<LinearLayout
+				android:orientation="vertical"
+				android:background="@drawable/card_bg"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent">
+				<tv.mixch.widget.MypageProfileView
+					android:id="@+id/profile_view"
+					android:layout_marginBottom="7dp"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content" />
+				<include layout="@layout/view_mypage_stats" />
+				<View
+					android:layout_width="match_parent"
+					android:layout_height="3dp"
+					android:background="@drawable/card_bg"
+				/>
+				<View
+					android:layout_width="match_parent"
+					android:layout_height="8dp"
+					android:background="#fff3f3f3"
+				/>
+				<View
+					android:layout_width="match_parent"
+					android:layout_height="1dp"
+					android:background="#ffdedede"
+				/>
+				<include layout="@layout/view_board_stats" />
+			</LinearLayout>
+			<tv.mixch.widget.MovieGridCardView
+				android:id="@+id/movies_posts"
+				app:cardBackgroundColor="#ffffffff"
+				android:layout_marginLeft="8dp"
+				android:layout_marginTop="8dp"
+				android:layout_marginRight="8dp"
+				android:layout_marginBottom="8dp"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content" />
+			<tv.mixch.widget.user.UserGridCardView
+				android:id="@+id/users_followers"
+				app:cardBackgroundColor="#ffffffff"
+				android:layout_marginLeft="8dp"
+				android:layout_marginTop="0dp"
+				android:layout_marginRight="8dp"
+				android:layout_marginBottom="8dp"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content" />
+			<tv.mixch.widget.MovieGridCardView
+				android:id="@+id/movies_favs"
+				app:cardBackgroundColor="#ffffffff"
+				android:layout_marginLeft="8dp"
+				android:layout_marginTop="0dp"
+				android:layout_marginRight="8dp"
+				android:layout_marginBottom="8dp"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content" />
+		</LinearLayout>
+	</tv.mixch.widget.ScrollView>
+
+	<!-- Toolbar -->
+	<include layout="@layout/toolbar" />
+</FrameLayout>

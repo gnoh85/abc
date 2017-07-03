@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto">
+	<item
+		android:id="@+id/action_page_users_ranking"
+		android:title="@string/users_ranking"
+		android:icon="@drawable/ic_ranking"
+		app:showAsAction="always" />
+	<item
+		android:id="@+id/action_page_notification"
+		android:title="@string/my_notification"
+		android:icon="@drawable/ic_notifications_none_white_36dp"
+		app:showAsAction="always" />
+	<item
+		android:id="@+id/action_page_mypage"
+		android:title="@string/mypage"
+		android:icon="@drawable/ic_perm_identity_white_36dp"
+		app:showAsAction="always" />
+	<item
+		android:id="@+id/action_page_user_search"
+		android:title="@string/search"
+		android:icon="@drawable/ic_search_white_36dp"
+		app:showAsAction="always" />
+</menu>

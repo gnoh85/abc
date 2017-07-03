@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/user_stats"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_gravity="center_vertical"
+	android:orientation="horizontal"
+	>
+	<TextView
+		android:id="@+id/fan_count"
+		android:text=""
+		android:textColor="@android:color/black"
+		android:textSize="@dimen/user_fan_button_text_size"
+		android:lines="1"
+		android:gravity="center_vertical|left"
+		android:layout_gravity="center_vertical|left"
+		android:layout_marginRight="4dp"
+		android:layout_width="wrap_content"
+		android:layout_height="32dp" />
+	<TextView
+		android:id="@+id/fan_label"
+		android:text="@string/fan"
+		android:textColor="#ff888888"
+		android:textSize="@dimen/user_fan_label_text_size"
+		android:lines="1"
+		android:gravity="center_vertical|left"
+		android:layout_gravity="center_vertical|left"
+		android:layout_weight="1"
+		android:layout_width="0dp"
+		android:layout_height="32dp" />
+	<FrameLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_vertical|right"
+		>
+		<include
+			android:id="@+id/fan_button"
+			layout="@layout/button_small"
+			/>
+	</FrameLayout>
+</LinearLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+		android:scaleType="centerCrop"
+        android:id="@+id/thumb_image"
+        />
+    <TextView
+        android:id="@+id/duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:shadowColor="#000000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="1"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_gravity="right|bottom" />
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/play_cover"
+        android:src="@drawable/ic_action_play_over_video"
+        android:visibility="gone"
+        android:layout_gravity="center" />
+    <ImageView
+        android:id="@+id/checkMark"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/check_mark_photo"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_gravity="right|bottom" />
+</FrameLayout>

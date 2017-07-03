@@ -1,0 +1,140 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/live_base_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    >
+
+    <!-- カメラプレビュー -->
+    <SurfaceView
+        android:id="@+id/camera_preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+
+                <tv.mixch.widget.LiveHeaderView
+                    android:id="@+id/live_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+                <tv.mixch.widget.KaraokeLyricView
+                    android:id="@+id/karaoke_lyric_view"
+                    android:layout_height="52dp"
+                    android:layout_width="match_parent"
+                    android:padding="5dp"
+                    android:background="@drawable/bg_live_comment"
+                    android:layout_gravity="left|center_horizontal"
+                    />
+
+                <tv.mixch.widget.FilterSwipeSelectorView
+                    android:id="@+id/filter_swipe_selector"
+                    android:visibility="invisible"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:minHeight="54dp"
+                    />
+
+                <tv.mixch.widget.LiveCommentView
+                    android:id="@+id/live_comment_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="2dp"
+                    android:paddingLeft="4dp"
+                    android:paddingRight="4dp"
+                    android:background="@drawable/bg_live_below_cover"
+                    />
+            </LinearLayout>
+
+            <fragment
+                android:id="@+id/volume_settings"
+                android:name="tv.mixch.android.LiveVolumeControllerFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                />
+
+        </FrameLayout>
+
+        <tv.mixch.widget.LiveMediaControllerView
+            android:id="@+id/media_controller"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/live_start_countdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_gravity="center">
+
+        <ProgressBar
+            android:id="@+id/live_start_progress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:rotation="-90"
+            android:max="300"
+            android:progress="0"
+            android:background="@drawable/bg_live_start_progress"
+            android:progressDrawable="@drawable/live_start_progress_bar" />
+
+        <TextView
+            android:id="@+id/live_start_countdown_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:textSize="70sp"
+            android:textStyle="bold"
+            android:text="1"
+            android:layout_gravity="center"/>
+
+    </FrameLayout>
+
+    <ProgressBar
+        android:id="@+id/loading_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        />
+
+    <ImageView
+        android:id="@+id/live_start_button"
+        android:layout_width="115dp"
+        android:layout_height="115dp"
+        android:layout_gravity="center_horizontal|bottom"
+        android:src="@drawable/btn_live_start"
+        android:layout_marginBottom="50dp"/>
+
+    <tv.mixch.widget.LiveTitleEditor
+        android:id="@+id/live_title_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:visibility="gone"
+        />
+</FrameLayout>

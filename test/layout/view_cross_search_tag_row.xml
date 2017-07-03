@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/layout_cross_search_category">
+
+    <!-- タグ名 -->
+    <TextView
+        android:id="@+id/cross_search_tag_name_text"
+        android:layout_width="wrap_content"
+        android:layout_height="64dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="12dp"
+        android:textSize="15sp"
+        android:textColor="@color/material_grey_900"
+        android:drawableLeft="@drawable/ic_tag"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical"
+        />
+
+    <!-- タグに紐付けされた動画数 -->
+    <TextView
+        android:id="@+id/cross_search_tag_count_text"
+        android:layout_width="wrap_content"
+        android:layout_height="64dp"
+        android:layout_marginLeft="8dp"
+        android:textSize="12sp"
+        android:textColor="@color/material_grey_700"
+        android:gravity="center_vertical"
+        />
+
+    <android.support.v4.widget.Space
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_weight="1"
+        />
+
+    <!-- 紐付けされた動画のサムネイル -->
+    <tv.mixch.widget.NetworkImageView
+        android:id="@+id/cross_search_tag_thumbnail_image"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="12dp"
+        />
+</LinearLayout>

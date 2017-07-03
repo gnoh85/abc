@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="model" type="tv.mixch.android.LiveVolumeControllerFragment.VModel"/>
+        <import type="android.view.View"/>
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#A0000000"
+        android:padding="8dp"
+        app:animatedVisibility="@{model.expanded? View.VISIBLE : View.GONE}"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="left|center_vertical"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left|bottom"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:text="@string/live_volume_bgm"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:text="@{model.bgmVolumeText}"
+                android:gravity="left|bottom"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal"
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_volume_mute"
+                android:padding="4dp"
+                />
+            <SeekBar
+                android:id="@+id/bgm_volume_seeker"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:thumb="@drawable/karaoke_volume_thumb"
+                android:maxWidth="200dp"
+                android:max="@{model.maxBgm}"
+                android:progress="@={model.bgmVolume}"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_volume_up"
+                android:padding="4dp"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

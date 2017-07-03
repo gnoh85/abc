@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto">
+	<item
+		android:id="@+id/action_user_unfollow"
+		android:title="@string/unfollow"
+		app:showAsAction="never" />
+	<item
+		android:id="@+id/action_user_remove_fan"
+		android:title="@string/remove_fan"
+		app:showAsAction="never" />
+	<item
+		android:id="@+id/action_user_unblock"
+		android:title="@string/unblock"
+		app:showAsAction="never" />
+	<item
+		android:id="@+id/action_user_block"
+		android:title="@string/block"
+		app:showAsAction="never" />
+</menu>

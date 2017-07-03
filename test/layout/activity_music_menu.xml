@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:fillViewport="true">
+
+	<LinearLayout
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+
+		<!-- Toolbar -->
+		<include layout="@layout/toolbar" />
+
+		<FrameLayout
+			android:id="@+id/music_menu_gallary"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="56dp"
+				android:paddingLeft="16dp"
+				android:gravity="left|center_vertical"
+				android:text="@string/movie_create_add_bgm_movie"
+				android:textColor="@android:color/white"
+				android:background="@color/background_more_dark"
+				android:textSize="16sp"
+				android:textStyle="bold"
+			/>
+			<ImageView
+				android:layout_width="48dp"
+				android:layout_height="48dp"
+				android:layout_gravity="right|center_vertical"
+				android:src="@drawable/ic_navigate_next_grey600_48dp"
+				/>
+		</FrameLayout>
+		<View
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:background="@color/border_grey"
+		/>
+	
+		<FrameLayout
+			android:id="@+id/music_menu_like"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="56dp"
+				android:paddingLeft="16dp"
+				android:gravity="left|center_vertical"
+				android:text="@string/movie_create_add_bgm_liked_movie"
+				android:textColor="@android:color/white"
+				android:background="@color/background_more_dark"
+				android:textSize="16sp"
+				android:textStyle="bold"
+			/>
+			<ImageView
+				android:layout_width="48dp"
+				android:layout_height="48dp"
+				android:layout_gravity="right|center_vertical"
+				android:src="@drawable/ic_navigate_next_grey600_48dp"
+				/>
+		</FrameLayout>
+		<View
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:background="@color/border_grey"
+		/>
+	
+		<FrameLayout
+			android:id="@+id/music_menu_dubbing"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="56dp"
+				android:paddingLeft="16dp"
+				android:gravity="left|center_vertical"
+				android:text="@string/movie_create_add_bgm_budding"
+				android:textColor="@android:color/white"
+				android:background="@color/background_more_dark"
+				android:textSize="16sp"
+				android:textStyle="bold"
+			/>
+			<ImageView
+				android:layout_width="48dp"
+				android:layout_height="48dp"
+				android:layout_gravity="right|center_vertical"
+				android:src="@drawable/ic_navigate_next_grey600_48dp"
+				/>
+		</FrameLayout>
+		<View
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:background="@color/border_grey"
+		/>
+	
+		<TextView
+			android:id="@+id/movie_create_add_bgm_official"
+			android:layout_width="match_parent"
+			android:layout_height="32dp"
+			android:paddingTop="8dp"
+			android:paddingLeft="8dp"
+			android:background="@color/background_almost_black"
+			android:gravity="left|center_vertical"
+			android:text="@string/movie_create_add_bgm_title"
+			android:textColor="@android:color/white"
+			android:textSize="14sp"
+		/>
+		<!--android:background="#9CD8FE"-->
+	
+		<GridLayout
+			android:id="@+id/grid_layout"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:paddingLeft="8dp"
+			android:paddingRight="8dp"
+			android:columnCount="3"
+			android:background="@color/background_more_dark"
+		/>
+	
+	</LinearLayout>
+</ScrollView>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <corners android:radius="24dp" />
+            <solid android:color="@color/color_live" />
+        </shape>
+    </item>
+    <item android:left="2dp" android:top="3dp" android:right="2dp" android:bottom="3dp">
+        <bitmap android:src="@drawable/ico_live_logo" />
+    </item>
+</layer-list>

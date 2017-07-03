@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:background="@color/black">
+	<FrameLayout
+		android:id="@+id/video_container"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@color/black">
+		<VideoView android:id="@+id/signup_video"
+				   android:layout_width="match_parent"
+				   android:layout_height="match_parent"
+			/>
+		<LinearLayout
+			android:orientation="vertical"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:background="#BB000000">
+			<ImageView
+				android:layout_width="match_parent"
+				android:layout_height="45dp"
+				android:layout_marginTop="120dp"
+				android:layout_gravity="center"
+				android:src="@drawable/logo_mixch_l"
+				android:contentDescription="MixChannel" />
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="20dp"
+				android:layout_gravity="center"
+				android:gravity="center"
+				android:textSize="16sp"
+				android:textColor="#979797"
+				android:text="@string/signup_caption" />
+			</LinearLayout>
+	</FrameLayout>
+
+	<tv.mixch.widget.UnderlineTextView
+		android:id="@+id/terms_text"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="16dp"
+		android:layout_marginTop="10dp"
+		android:textSize="12sp"
+		android:gravity="center"
+		android:textColor="@color/light_grey"
+		android:text="@string/signup_terms"
+		/>
+	<LinearLayout
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="16dp">
+		<Button android:id="@+id/twitter_login_button"
+				android:layout_width="match_parent"
+				android:layout_height="@dimen/social_login_button_height"
+				android:layout_gravity="center"
+				android:layout_weight="1"
+				android:layout_marginLeft="16dp"
+				android:layout_marginRight="8dp"
+				android:text="@string/login_twitter"
+				android:background="@drawable/button_round_twitter"
+				android:drawableLeft="@drawable/btn_ic_twitter"
+				android:textSize="18sp"
+				android:textColor="#FFFFFF"
+				android:textStyle="bold"
+				android:paddingLeft="12dp"
+				android:textAllCaps="false" />
+		<Button
+			android:id="@+id/line_login_button"
+			android:layout_width="match_parent"
+			android:layout_height="@dimen/social_login_button_height"
+			android:layout_gravity="center"
+			android:layout_weight="1"
+			android:layout_marginLeft="8dp"
+			android:layout_marginRight="16dp"
+			android:text="@string/login_line"
+			android:background="@drawable/button_round_line"
+			android:drawableLeft="@drawable/btn_ic_line"
+			android:textSize="20sp"
+			android:textColor="#FFFFFF"
+			android:textStyle="bold"
+			android:paddingLeft="12dp"
+			android:textAllCaps="false" />
+	</LinearLayout>
+	<LinearLayout
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="16dp">
+		<Button android:id="@+id/google_login_button"
+				android:layout_width="match_parent"
+				android:layout_height="@dimen/social_login_button_height"
+				android:layout_gravity="center"
+				android:layout_weight="1"
+				android:layout_marginLeft="16dp"
+				android:layout_marginRight="8dp"
+				android:text="@string/login_google"
+				android:background="@drawable/button_round_google"
+				android:drawableLeft="@drawable/btn_ic_google"
+				android:textSize="18sp"
+				android:textColor="#FFFFFF"
+				android:textStyle="bold"
+				android:paddingLeft="12dp"
+				android:textAllCaps="false" />
+		<Button android:id="@+id/facebook_login_button"
+				android:layout_width="match_parent"
+				android:layout_height="@dimen/social_login_button_height"
+				android:layout_gravity="center"
+				android:layout_weight="1"
+				android:layout_marginLeft="8dp"
+				android:layout_marginRight="16dp"
+				android:text="@string/login_facebook"
+				android:background="@drawable/button_round_facebook"
+				android:drawableLeft="@drawable/btn_ic_facebook"
+				android:textSize="18sp"
+				android:textColor="#FFFFFF"
+				android:textStyle="bold"
+				android:paddingLeft="12dp"
+				android:textAllCaps="false" />
+	</LinearLayout>
+</LinearLayout>

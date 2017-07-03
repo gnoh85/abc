@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+	<style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+		<item name="android:windowAnimationStyle">@style/Animation.Activity</item>
+		<item name="android:editTextStyle">@style/EditText</item>
+	</style>
+
+	<style name="EditText" parent="Widget.AppCompat.EditText">
+		<item name="android:background">@drawable/edit_text</item>
+		<item name="android:paddingLeft">8dp</item>
+		<item name="android:paddingTop">8dp</item>
+		<item name="android:paddingRight">8dp</item>
+		<item name="android:paddingBottom">8dp</item>
+	</style>
+
+	<style name="SignupTheme" parent="AppTheme">
+	</style>
+
+	<style name="AppTheme.Dialog">
+		<item name="android:windowAnimationStyle">@style/Animation.Activity.Dialog</item> 
+	</style>
+
+	<style name="ActionBarTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+		<item name="android:displayOptions">showHome|showTitle|homeAsUp</item>
+	</style>
+
+	<style name="ActionBarThemePopup" parent="ThemeOverlay.AppCompat.Light">
+	</style>
+
+	<style name="Animation.Activity" parent="android:Animation.Activity">
+		<item name="android:activityOpenEnterAnimation">@anim/activity_enter_from_right</item>
+		<item name="android:activityOpenExitAnimation">@anim/activity_stay</item>
+		<item name="android:activityCloseEnterAnimation">@anim/activity_stay</item>
+		<item name="android:activityCloseExitAnimation">@anim/activity_exit_to_right</item>
+	</style>
+
+	<style name="Animation.Activity.Dialog">
+        <item name="android:activityOpenEnterAnimation">@anim/activity_enter_from_bottom</item>
+        <item name="android:activityOpenExitAnimation">@anim/activity_stay</item>
+        <item name="android:activityCloseEnterAnimation">@anim/activity_stay</item>
+        <item name="android:activityCloseExitAnimation">@anim/activity_exit_to_right</item>
+	</style>
+
+	<style name="ShowcaseView.Mixch">
+		<item name="sv_titleTextAppearance">@style/TextAppearance.ShowcaseView.Title.Mixch</item>
+		<item name="sv_detailTextAppearance">@style/TextAppearance.ShowcaseView.Detail</item>
+		<item name="sv_backgroundColor">#6033B5E5</item>
+		<item name="sv_buttonText">@android:string/ok</item>
+	</style>
+
+	<style name="TextAppearance.ShowcaseView.Title.Mixch" parent="android:style/TextAppearance.Large">
+		<item name="android:textColor">#1b91bc</item>
+	</style>
+</resources>

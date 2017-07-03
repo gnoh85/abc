@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@drawable/bg_live_broadcast_finish"
+    >
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ico_live_end"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:text="@string/live_broadcast_finish_message"
+        android:layout_marginTop="20dp"
+        />
+
+    <!-- プロフィールイメージ -->
+    <tv.mixch.widget.CircleNetworkImageView
+        android:id="@+id/live_profile_image"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="20dp"
+        />
+
+    <!-- 名前 -->
+    <TextView
+        android:id="@+id/live_profile_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="10dp"
+        />
+
+    <LinearLayout
+        android:id="@+id/live_stat_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical">
+        <!-- 配信時間 -->
+        <TextView
+            android:id="@+id/live_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/white"
+            />
+
+        <!-- 視聴者人数とコメント数 -->
+        <LinearLayout
+            android:id="@+id/live_guest_stat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+            >
+
+            <!-- 来場者数 -->
+            <TextView
+                android:id="@+id/live_guest_count"
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:drawableLeft="@drawable/ico_live_visitor"
+                android:drawablePadding="4dp"
+                />
+
+            <!-- コメント数 -->
+            <TextView
+                android:id="@+id/live_comment_count"
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:textColor="@android:color/white"
+                android:layout_marginLeft="8dp"
+                android:textSize="14sp"
+                android:drawableLeft="@drawable/ico_live_comment"
+                android:drawablePadding="4dp"
+                android:gravity="center"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- ボタン -->
+    <TextView
+        android:id="@+id/close_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/close"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/btn_round_transparent"
+        android:layout_marginTop="30dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="9dp"
+        android:paddingBottom="9dp"
+        />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"/>
+</LinearLayout>

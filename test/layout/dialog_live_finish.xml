@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <data>
+        <import type="android.view.View" />
+        <variable name="live" type="tv.mixch.model.LiveVModel" />
+        <variable name="bg" type="tv.mixch.model.BgDrawableVModel"/>
+        <variable name="title" type="String"/>
+        <variable name="isMine" type="boolean"/>
+        <variable name="onClose" type="android.view.View.OnClickListener"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="24dp"
+        android:paddingBottom="16dp"
+        app:startColor="@{bg.startColor}"
+        app:endColor="@{bg.endColor}"
+        app:angle="@{bg.angle}"
+        app:radius="@{bg.radius}"
+        app:alpha="@{bg.alpha}"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            >
+            <android.support.v4.widget.Space
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                />
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fadeScrollbars="true"
+                >
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:gravity="center"
+                    >
+                    <!--ライブマーク-->
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/ico_live_end"
+                        />
+                    <!--タイトル-->
+                    <TextView
+                        android:id="@+id/live_finish_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:gravity="center"
+                        android:textColor="@android:color/white"
+                        android:text="@{title}"
+                        android:textSize="18sp"
+                        />
+
+                    <!--応援メッセージ-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp"
+                        android:text="@string/live_finish_message"
+                        android:visibility="@{isMine ? View.GONE : View.VISIBLE}"
+                        />
+
+                    <!-- プロフィールイメージ -->
+                    <tv.mixch.widget.CircleNetworkImageView
+                        android:id="@+id/live_profile_image"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="16dp"
+                        app:defaultImageResId="@drawable/mysteryman"
+                        app:imageUrl="@{live.hostProfileImage}"
+                        app:circleBorderWidth="2dp"
+                        app:borderColor="#ffffff"
+                        android:onClick="@{live.listener.onOpenUserPage}"
+                        />
+
+                    <!-- 名前 -->
+                    <TextView
+                        android:id="@+id/live_profile_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:lines="2"
+                        android:gravity="center"
+                        android:ellipsize="end"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:text="@{live.hostProfileName}"
+                        android:textColor="@android:color/white"
+                        />
+
+                    <!-- 視聴者人数とコメント数 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="18dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_horizontal"
+                        >
+
+                        <!-- 来場者数 -->
+                        <TextView
+                            android:id="@+id/live_guest_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@android:color/white"
+                            android:textSize="14sp"
+                            android:text="@{live.visitor}"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:drawableLeft="@drawable/ico_live_visitor"
+                            android:drawablePadding="4dp"
+                            />
+
+                        <!-- コメント数 -->
+                        <TextView
+                            android:id="@+id/live_comment_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:textColor="@android:color/white"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:text="@{live.comments}"
+                            android:drawableLeft="@drawable/ico_live_comment"
+                            android:drawablePadding="4dp"
+                            android:gravity="center"
+                            />
+
+                        <!-- 配信時間 -->
+                        <TextView
+                            android:id="@+id/live_duration"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:textColor="@android:color/white"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:text="@{live.duration}"
+                            android:drawableLeft="@drawable/ico_live_time"
+                            android:drawablePadding="4dp"
+                            android:gravity="center"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+            <android.support.v4.widget.Space
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                />
+        </LinearLayout>
+        <!-- ボタン -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal"
+            android:paddingTop="16dp"
+            android:gravity="center"
+            >
+            <!--閉じる-->
+            <TextView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/close"
+                android:textColor="#FF3B48"
+                android:background="@drawable/btn_round_white"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="9dp"
+                android:paddingBottom="9dp"
+                android:onClick="@{onClose}"
+                />
+
+            <!--掲示板へ-->
+            <TextView
+                android:id="@+id/live_go_to_board"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:text="@string/go_to_board"
+                android:textColor="#FF3B48"
+                android:background="@drawable/btn_round_white"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="9dp"
+                android:paddingBottom="9dp"
+                android:visibility="@{isMine ? View.GONE : View.VISIBLE}"
+                android:onClick="@{live.listener.onOpenBoard}"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</layout>
